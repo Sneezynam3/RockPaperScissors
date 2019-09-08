@@ -11,6 +11,9 @@
 <script type="text/javascript">
     
     var options = ["r", "p", "s"];
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
 
     document.onkeyup = function() {
         var userguess = String.fromCharCode(event.keyCode).
@@ -18,26 +21,41 @@
 
             console.log(userguess); 
     
-            var computeGuess = options[Math.floor(Math.random()*options.length)];
+            var computerGuess = options[Math.floor(Math.random()*options.length)];
     
-            console.log(computeGuess);
+            console.log(computerGuess);
     
             if (userguess == "r" || userguess == "p" || userguess == "s") {
-                if ((userguess== "r") && (computeGuess=="s"))
-                alert("You win!");
-                if ((userguess== "r") && (computeGuess=="p"))
-                alert("You win!");
-                if ((userguess== "s") && (computeGuess=="p"))
-                alert("You win!");
-                if ((userguess== "s") && (computeGuess=="r"))
-                alert("You lose!");
-                if ((userguess== "p") && (computeGuess=="s"))
-                alert("You lose!");
-                if ((userguess== "p") && (computeGuess=="r"))
-                alert("You lose!");
-                if((userguess==computeGuess)){
-                    alert("You tied!")
+                if ((userguess== "r") && (computerGuess=="s")) {
+                    wins++;
+                    alert("Wins: " + wins);
                 }
+                if ((userguess == "p") && (computerGuess =="r")){
+                    wins++;
+                    alert("Wins: " + wins);
+                }
+                if ((userguess == "s") && (computerGuess =="p")) {
+                    wins++;
+                    alert("Wins: " + wins);
+                }
+                if ((userguess == "s") && (computerGuess =="r")) {
+                    losses++;
+                    alert("Losses: " + losses);
+                }
+                if ((userguess == "p") && (computerGuess =="s")) {
+                    losses++;
+                    alert("Losses: " + losses);
+                }
+                if ((userguess == "r") && (computerGuess =="p")) {
+                    losses++;
+                    alert("Losses: " + losses);
+                }
+                if((userguess === computerGuess)){
+                    ties++;
+                    alert("Ties: " + ties);
+                }
+            } else {
+                alert("Please choose r, p, or s");
             }
     };
     
