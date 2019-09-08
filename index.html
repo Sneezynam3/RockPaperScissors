@@ -8,6 +8,11 @@
 </head>
 <body>
     
+<div id="game">
+    <p>Lets play Rock, Paper, Scissors! Press r, p, or s to start playing</p>
+</div>
+
+
 <script type="text/javascript">
     
     var options = ["r", "p", "s"];
@@ -28,35 +33,41 @@
             if (userguess == "r" || userguess == "p" || userguess == "s") {
                 if ((userguess== "r") && (computerGuess=="s")) {
                     wins++;
-                    alert("Wins: " + wins);
+                    
                 }
                 if ((userguess == "p") && (computerGuess =="r")){
                     wins++;
-                    alert("Wins: " + wins);
+                    
                 }
                 if ((userguess == "s") && (computerGuess =="p")) {
                     wins++;
-                    alert("Wins: " + wins);
+                    
                 }
                 if ((userguess == "s") && (computerGuess =="r")) {
                     losses++;
-                    alert("Losses: " + losses);
+                    
                 }
                 if ((userguess == "p") && (computerGuess =="s")) {
                     losses++;
-                    alert("Losses: " + losses);
+                    
                 }
                 if ((userguess == "r") && (computerGuess =="p")) {
                     losses++;
-                    alert("Losses: " + losses);
+                    
                 }
                 if((userguess === computerGuess)){
                     ties++;
-                    alert("Ties: " + ties);
+                    
                 }
             } else {
                 alert("Please choose r, p, or s");
             }
+        var html = "<p>Lets play Rock, Paper, Scissors! Press r, p, or s to start playing</p>" + 
+            "<h1>Wins: " + wins + "</h1>" + 
+            "<h2>Losses: " + losses + "</h2>" + 
+            "<h3>Ties: " + ties + "</h3>";
+        
+        document.querySelector("#game").innerHTML = html;
     };
     
     
