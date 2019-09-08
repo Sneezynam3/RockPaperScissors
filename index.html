@@ -23,9 +23,21 @@
             console.log(computeGuess);
     
             if (userguess == "r" || userguess == "p" || userguess == "s") {
-                alert("Chosen correctly!");
-            } else {
-                alert("Please choose r, p, or s");
+                if ((userguess== "r") && (computeGuess=="s"))
+                alert("You win!");
+                if ((userguess== "r") && (computeGuess=="p"))
+                alert("You win!");
+                if ((userguess== "s") && (computeGuess=="p"))
+                alert("You win!");
+                if ((userguess== "s") && (computeGuess=="r"))
+                alert("You lose!");
+                if ((userguess== "p") && (computeGuess=="s"))
+                alert("You lose!");
+                if ((userguess== "p") && (computeGuess=="r"))
+                alert("You lose!");
+                if((userguess==computeGuess)){
+                    alert("You tied!")
+                }
             }
     };
     
